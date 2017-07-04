@@ -129,7 +129,7 @@ public class ModItems {
     public static Item longbow;
 
 
-    //public static Item testleggings;
+    public static Item testleggings;
 
     //public static Item forgingmanual;
 
@@ -249,7 +249,7 @@ public class ModItems {
         /**********
          ARMOR
          **********/
-        //testleggings=new CustomLeggings(PrimalMaterials.ARMOR_ADAMANT, 3, EntityEquipmentSlot.LEGS, "testleggings");
+        testleggings=new CustomLeggings(PrimalMaterials.ARMOR_ADAMANT, 3, EntityEquipmentSlot.CHEST, "testleggings");
         //registerItem(312, "diamond_leggings", (new ItemArmor(ItemArmor.ArmorMaterial.DIAMOND, 3, EntityEquipmentSlot.LEGS)).setUnlocalizedName("leggingsDiamond"));
     }
 
@@ -357,7 +357,7 @@ public class ModItems {
         /**********
          ARMOR
          **********/
-        //GameRegistry.register(testleggings);
+        GameRegistry.register(testleggings);
 
 
 
@@ -470,7 +470,7 @@ public class ModItems {
         /**********
          ARMOR
          **********/
-        //registerRender(testleggings);
+        registerRender(testleggings);
 
     }
 

@@ -1,5 +1,6 @@
 package nmd.primal.forgecraft.proxy;
 
+import net.minecraft.client.model.ModelBiped;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import nmd.primal.forgecraft.init.ModBlocks;
 import nmd.primal.forgecraft.init.ModItems;
@@ -43,5 +44,7 @@ public class ClientProxy implements CommonProxy {
         //ModelBakery.registerItemVariants(ModItems.stonetongs, new ResourceLocation(ModInfo.MOD_ID, "stonetongs_default"),
         //        new ResourceLocation(ModInfo.MOD_ID, "stonetongs_emptyhot"));
     }
+
+
 
 }

@@ -1,8 +1,15 @@
 package nmd.primal.forgecraft.items.armor;
 
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import nmd.primal.forgecraft.ModInfo;
+
+import static nmd.primal.forgecraft.ForgeCraft.proxy;
 
 /**
  * Created by mminaie on 7/3/17.
@@ -26,5 +33,7 @@ public class CustomLeggings extends ItemArmor{
     {
         return false;
     }
+
+
 
 }
