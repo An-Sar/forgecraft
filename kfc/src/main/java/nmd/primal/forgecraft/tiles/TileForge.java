@@ -63,7 +63,7 @@ public class TileForge extends TileBaseSlot implements ITickable {
 
     private void slotZeroManager(World world){
         if(this.getSlotStack(0) != ItemStack.EMPTY) {
-            Integer decrInt = (int) Math.floor(getVanillaItemBurnTime(this.getSlotStack(0)) / 5);
+            Integer decrInt = (int) Math.floor(CommonUtils.getBurnTime(this.getSlotStack(0)) / 5);
             if(decrInt == 0) {
                 decrInt = 1;
             }

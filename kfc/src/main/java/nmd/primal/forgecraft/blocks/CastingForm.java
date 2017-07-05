@@ -5,6 +5,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -29,7 +30,7 @@ import java.util.Random;
  */
 public class CastingForm extends CustomContainerFacing implements CastingFormHandler{
 
-    protected static AxisAlignedBB bound = new AxisAlignedBB(0/16D, 0.0D, 0/16D, 16/16D, 5/16D, 16/16D);
+    protected static AxisAlignedBB bound = new AxisAlignedBB(0/16D, 0.0D, 0/16D, 16/16D, 3/16D, 16/16D);
 
     public CastingForm(Material material, String registryName) {
         super(material, registryName);
@@ -57,7 +58,7 @@ public class CastingForm extends CustomContainerFacing implements CastingFormHan
     public void updateTick(World world, BlockPos pos, IBlockState state, Random random)
     {
         if (!world.isRemote) {
-            if(CommonUtils.randomCheck(10)) {
+            if(CommonUtils.randomCheck(4)) {
                 TileCastingForm tile = (TileCastingForm) world.getTileEntity(pos);
                 String[] tempArray = new String[25];
                 for (int i = 0; i < 25; i++) {
@@ -66,6 +67,32 @@ public class CastingForm extends CustomContainerFacing implements CastingFormHan
                 doCraftingformCrafting(tempArray, world, tile, pos);
             }
         }
+    }
+
+    @Override
+    public void breakBlock(World world, BlockPos pos, IBlockState state)
+    {
+        if (!world.isRemote && world.getGameRules().getBoolean("doTileDrops"))
+        {
+            TileCastingForm tile = (TileCastingForm) world.getTileEntity(pos);
+            if (tile !=null)
+            {
+                for (ItemStack stack : tile.getSlotList())
+                {
+                    if (stack != null) {
+                        float offset = 0.7F;
+                        double offsetX = world.rand.nextFloat() * offset + (1.0F - offset) * 0.5D;
+                        double offsetY = world.rand.nextFloat() * offset + (1.0F - offset) * 0.5D;
+                        double offsetZ = world.rand.nextFloat() * offset + (1.0F - offset) * 0.5D;
+                        EntityItem item = new EntityItem(world, pos.getX() + offsetX, pos.getY() + offsetY, pos.getZ() + offsetZ, stack);
+                        item.setDefaultPickupDelay();
+                        world.spawnEntity(item);
+                    }
+                }
+            }
+        }
+
+        super.breakBlock(world, pos, state);
     }
 
 
@@ -142,11 +169,6 @@ public class CastingForm extends CustomContainerFacing implements CastingFormHan
         return false;
     }
 
-    @Override
-    public boolean isFullyOpaque(IBlockState state)
-    {
-        return false;
-    }
 
     @Override
     public boolean isOpaqueCube(IBlockState state)

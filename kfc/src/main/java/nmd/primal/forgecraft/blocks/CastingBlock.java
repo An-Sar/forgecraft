@@ -23,6 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import nmd.primal.core.common.helper.CommonUtils;
 import nmd.primal.core.common.helper.PlayerHelper;
 import nmd.primal.forgecraft.ModInfo;
+import nmd.primal.forgecraft.init.ModBlocks;
 import nmd.primal.forgecraft.init.ModItems;
 import nmd.primal.forgecraft.items.casting.CastingPart;
 import nmd.primal.forgecraft.tiles.TileCastingBlock;
@@ -98,10 +99,13 @@ public class CastingBlock extends CustomContainerFacing {
             }
 
             if(pItem.getItem() == ModItems.stonetongs ){
+                ItemStack dropCrucible = new ItemStack(ModBlocks.emptycrucible);
                 if(pItem.getTagCompound().getInteger("type") == 40){
                     if(tile.getSlotStack(0).getItem() == ModItems.cast_hoe){
                         ItemStack dropStack = new ItemStack(ModItems.bronzehoehead);
+
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -112,6 +116,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if(tile.getSlotStack(0).getItem() == ModItems.cast_pickaxe){
                         ItemStack dropStack = new ItemStack(ModItems.bronzepickaxehead);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -121,6 +126,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if(tile.getSlotStack(0).getItem() == ModItems.cast_axe){
                         ItemStack dropStack = new ItemStack(ModItems.bronzeaxehead);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -130,6 +136,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if(tile.getSlotStack(0).getItem() == ModItems.cast_shovel){
                         ItemStack dropStack = new ItemStack(ModItems.bronzeshovelhead);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -139,6 +146,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if(tile.getSlotStack(0).getItem() == ModItems.cast_gladius){
                         ItemStack dropStack = new ItemStack(ModItems.bronzegladius);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -170,6 +178,7 @@ public class CastingBlock extends CustomContainerFacing {
 
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -191,6 +200,7 @@ public class CastingBlock extends CustomContainerFacing {
 
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -212,6 +222,7 @@ public class CastingBlock extends CustomContainerFacing {
 
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -233,6 +244,7 @@ public class CastingBlock extends CustomContainerFacing {
 
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -242,6 +254,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if(tile.getSlotStack(0).getItem() == ModItems.cast_gladius){
                         ItemStack dropStack = new ItemStack(ModItems.bronzegladius);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -264,6 +277,7 @@ public class CastingBlock extends CustomContainerFacing {
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if (CommonUtils.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -284,6 +298,7 @@ public class CastingBlock extends CustomContainerFacing {
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if (CommonUtils.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -306,6 +321,7 @@ public class CastingBlock extends CustomContainerFacing {
 
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if (CommonUtils.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -328,6 +344,7 @@ public class CastingBlock extends CustomContainerFacing {
 
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if (CommonUtils.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -337,6 +354,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if (tile.getSlotStack(0).getItem() == ModItems.cast_gladius) {
                         ItemStack dropStack = new ItemStack(ModItems.bronzegladius);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if (CommonUtils.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -359,6 +377,7 @@ public class CastingBlock extends CustomContainerFacing {
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -379,6 +398,7 @@ public class CastingBlock extends CustomContainerFacing {
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -401,6 +421,7 @@ public class CastingBlock extends CustomContainerFacing {
 
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -423,6 +444,7 @@ public class CastingBlock extends CustomContainerFacing {
 
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -432,6 +454,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if (tile.getSlotStack(0).getItem() == ModItems.cast_gladius) {
                         ItemStack dropStack = new ItemStack(ModItems.bronzegladius);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -454,6 +477,7 @@ public class CastingBlock extends CustomContainerFacing {
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -474,6 +498,7 @@ public class CastingBlock extends CustomContainerFacing {
                         dropStack.getSubCompound("tags").setInteger("modifiers", 1);
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -496,6 +521,7 @@ public class CastingBlock extends CustomContainerFacing {
 
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -518,6 +544,7 @@ public class CastingBlock extends CustomContainerFacing {
 
 
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -527,6 +554,7 @@ public class CastingBlock extends CustomContainerFacing {
                     if (tile.getSlotStack(0).getItem() == ModItems.cast_gladius) {
                         ItemStack dropStack = new ItemStack(ModItems.bronzegladius);
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
+                        PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
                         if(CommonUtils.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
@@ -634,12 +662,6 @@ public class CastingBlock extends CustomContainerFacing {
 
     @Override
     public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean isFullyOpaque(IBlockState state)
     {
         return false;
     }

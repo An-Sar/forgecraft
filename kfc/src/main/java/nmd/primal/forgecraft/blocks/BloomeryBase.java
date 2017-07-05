@@ -14,6 +14,7 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
@@ -38,6 +39,7 @@ public class BloomeryBase extends CustomContainerFacing implements ITileEntityPr
 
     //public static final PropertyBool COVERED =  PropertyBool.create("covered");
     private int maxHeat;
+    public AxisAlignedBB AABB = new AxisAlignedBB(5/32D, 0.0D, 5/32D, 27/32D, 12/16D, 27/32D);
 
     public BloomeryBase(Material material, String registryName, Integer maxHeat) {
         super(material, registryName);
@@ -46,6 +48,12 @@ public class BloomeryBase extends CustomContainerFacing implements ITileEntityPr
         setHardness(3.0f);
         setResistance(5.0f);
         this.maxHeat=maxHeat;
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+        return AABB;
     }
 
     public int getMaxHeat() {
@@ -76,105 +84,107 @@ public class BloomeryBase extends CustomContainerFacing implements ITileEntityPr
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if (!world.isRemote) {
-            TileBloomery tile = (TileBloomery) world.getTileEntity(pos);
-            if (tile != null) {
-                ItemStack pItem = player.inventory.getCurrentItem();
-                ItemStack tileItem = tile.getSlotStack(0);
-                ItemStack tileItem1 = tile.getSlotStack(1);
-                if(pItem.isEmpty()) {
 
-                    if(!player.isSneaking()){
-                        if(world.getBlockState(pos).getValue(PrimalStates.ACTIVE) == true){
-                            Integer bloomeryHeat = tile.getHeat();
-                            Integer idealTemp = null;
+        if (world.isRemote)
+            return true;
+
+
+
+        TileBloomery tile = (TileBloomery) world.getTileEntity(pos);
+        if (tile != null) {
+            ItemStack pItem = player.inventory.getCurrentItem();
+            ItemStack tileItem = tile.getSlotStack(0);
+            ItemStack tileItem1 = tile.getSlotStack(1);
+            if(pItem.isEmpty()) {
+
+                if(!player.isSneaking()){
+                    if(world.getBlockState(pos).getValue(PrimalStates.ACTIVE) == true){
+
+                        Integer bloomeryHeat = tile.getHeat();
+                        String display =  "\n" + "Current Temp: " + bloomeryHeat.toString() +
+                                " Fuel Remaining: " + tileItem.getCount();
+                        ITextComponent itextcomponent = new TextComponentString(display);
+                        player.sendStatusMessage(itextcomponent, false);
+
+                        BloomeryCrafting recipe = BloomeryCrafting.getRecipe(tile.getSlotStack(1));
+                        if(recipe != null) {
+                            Integer minTemp = recipe.getHeatThreshold();
                             Integer cookCounter = tile.getCookCounter();
-                            Integer idealCookTime = null;
-                            Integer remainingTime =  null;
+                            Integer idealTime = recipe.getIdealTime();
+                            Integer remainingTime = idealTime - cookCounter;
 
-                            String stringBloomeryHeat = bloomeryHeat.toString();
-                            String stringIdealTemp = "";
-                            String stringRemainingTime = "";
+                            String display1 =
+                                    "Cooking: " + tileItem1.getDisplayName() +
+                                            " Target Temp: " + minTemp.toString() +
+                                            " Time Left: " + remainingTime.toString();
+                            ITextComponent itextcomponent1 = new TextComponentString(display1);
+                            player.sendStatusMessage(itextcomponent1, false);
 
-                            BloomeryCrafting recipe = BloomeryCrafting.getRecipe(tile.getSlotStack(1));
-                            if(recipe != null) {
-                                idealTemp = recipe.getHeatThreshold();
-                                idealCookTime = recipe.getIdealTime();
-                                stringIdealTemp = idealTemp.toString();
-                                remainingTime = idealCookTime - cookCounter;
-                                stringRemainingTime = remainingTime.toString();
-
-                            }
-                            String display =
-                                    "Current Temp: " + stringBloomeryHeat
-                                    + "Ideal Temp: " + stringIdealTemp
-                                    + "Ticks Remaining: " + stringRemainingTime
-                                    + "Fuel Remaining: " + tile.getSlotStack(0).getCount();
-                            ITextComponent itextcomponent = new TextComponentString(display);
-                            player.sendStatusMessage(itextcomponent, true);
-                            return true;
                         }
-                    }
-                }
-                if(tile.getSlotStack(0) != ItemStack.EMPTY) {
-                    if((FireSource.useSource(world, pos, player, pItem, hand, facing, hitX, hitY, hitZ))) {
-                        world.setBlockState(pos, state.withProperty(PrimalStates.ACTIVE, true), 2);
-                        tile.setHeat(100);
-                        tile.markDirty();
-                        tile.updateBlock();
                         return true;
-                    }
-                }
-                if((!pItem.isEmpty()) && tile.isItemValidForSlot(0, pItem)) {
-                    if (!tileItem.isEmpty()){
-                        if(pItem.getItem() == tileItem.getItem()){
-                            if(tileItem.getCount() < 64){
-                                if(tileItem.getCount() + pItem.getCount() <= 64){
-                                    tileItem.grow(pItem.getCount());
-                                    player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-                                    tile.markDirty();
-                                    tile.updateBlock();
-                                    return true;
-                                }
-                                if(tileItem.getCount() + pItem.getCount() > 64){
-                                    pItem.setCount(64-pItem.getCount());
-                                    tileItem.setCount(64);
-                                    tile.markDirty();
-                                    tile.updateBlock();
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                    if(tileItem.isEmpty()) {
-                        tile.setSlotStack(0, pItem);
-                        player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-                        return true;
-                    }
-                }
-
-                if((!pItem.isEmpty()) && tile.isItemValidForSlot(1, pItem)) {
-                    if (!tileItem1.isEmpty()) {
-                        return false;
-                    }
-                    if(tileItem1.isEmpty()){
-                        ItemStack tempItem = new ItemStack(pItem.getItem(), 1);
-                        tile.setSlotStack(1, tempItem);
-                        pItem.shrink(1);
-                        return true;
-                    }
-                }
-                if (player.isSneaking()) {
-                    if (!tile.getSlotStack(0).isEmpty()) {
-                        if(player.inventory.getCurrentItem().getItem() instanceof ItemSpade) {
-                            ItemStack returnStack = tile.getSlotStack(0).copy();
-                            PlayerHelper.spawnItemOnPlayer(world, player, returnStack);
-                            tile.clearSlot(0);
-                            return true;
-                        }
                     }
                 }
             }
+
+            if(tile.getSlotStack(0) != ItemStack.EMPTY) {
+                if((FireSource.useSource(world, pos, player, pItem, hand, facing, hitX, hitY, hitZ))) {
+                    world.setBlockState(pos, state.withProperty(PrimalStates.ACTIVE, true), 2);
+                    tile.setHeat(100);
+                    tile.markDirty();
+                    tile.updateBlock();
+                    return true;
+                }
+            }
+            if((!pItem.isEmpty()) && tile.isItemValidForSlot(0, pItem)) {
+                if (!tileItem.isEmpty()){
+                    if(pItem.getItem() == tileItem.getItem()){
+                        if(tileItem.getCount() < 64){
+                            if(tileItem.getCount() + pItem.getCount() <= 64){
+                                tileItem.grow(pItem.getCount());
+                                player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+                                tile.markDirty();
+                                tile.updateBlock();
+                                return true;
+                            }
+                            if(tileItem.getCount() + pItem.getCount() > 64){
+                                pItem.setCount(64-pItem.getCount());
+                                tileItem.setCount(64);
+                                tile.markDirty();
+                                tile.updateBlock();
+                                return true;
+                            }
+                        }
+                    }
+                }
+                if(tileItem.isEmpty()) {
+                    tile.setSlotStack(0, pItem);
+                    player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+                    return true;
+                }
+            }
+
+            if((!pItem.isEmpty()) && tile.isItemValidForSlot(1, pItem)) {
+                if (!tileItem1.isEmpty()) {
+                    return false;
+                }
+                if(tileItem1.isEmpty()){
+                    ItemStack tempItem = new ItemStack(pItem.getItem(), 1);
+                    tile.setSlotStack(1, tempItem);
+                    pItem.shrink(1);
+                    return true;
+                }
+            }
+            if (player.isSneaking()) {
+                if (!tile.getSlotStack(0).isEmpty()) {
+                    if(player.inventory.getCurrentItem().getItem() instanceof ItemSpade) {
+                        ItemStack returnStack = tile.getSlotStack(0).copy();
+                        PlayerHelper.spawnItemOnPlayer(world, player, returnStack);
+                        tile.clearSlot(0);
+                        return true;
+                    }
+                }
+            }
+
         }
         return false;
     }
@@ -354,11 +364,6 @@ public class BloomeryBase extends CustomContainerFacing implements ITileEntityPr
         return false;
     }
 
-    @Override
-    public boolean isFullyOpaque(IBlockState state)
-    {
-        return false;
-    }
 
     @Override
     public boolean isOpaqueCube(IBlockState state)

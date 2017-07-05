@@ -2,6 +2,8 @@ package nmd.primal.forgecraft.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -35,61 +37,53 @@ public interface BreakerHandler {
         return false;
     }
 
-    /*
-    int checkid = OreDictionary.getOreID(oreDictName);
-for (int id:OreDictionary.getOreIDs(stack))
-    if(id == checkid) return true;
-return false;
-     */
-
-// somewhere else
-//if(hasOreName(new ItemStack(Blocks.LOG), "logWood"))
-    // item is logWood
-
     default boolean doBreaking(World world, IBlockState state, BlockPos pos, TileBreaker tile) {
         for (int i=0; i < EnumFacing.HORIZONTALS.length; i++) {
             EnumFacing face = world.getBlockState(pos).getValue(CustomContainerFacing.FACING);
             if(face.equals(world.getBlockState(pos).getValue(CustomContainerFacing.FACING))){
-                Block smashBlock = world.getBlockState(pos.offset(face)).getBlock();
-                ItemStack smashStack = new ItemStack(smashBlock);
-                if (hasOreName(smashStack, "oreIron")) {
-                    if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                        world.setBlockToAir(pos.offset(face));
-                        PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.IRON_DUST, randomChanceReturn(9, 1, 2)));
-                        tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                        return true;
+                //Block smashBlock = world.getBlockState(pos.offset(face)).getBlock();
+                IBlockState smashState = world.getBlockState(pos.offset(face));
+                if(!smashState.getBlock().equals(Blocks.AIR)) {
+                    ItemStack smashStack = new ItemStack(Item.getItemFromBlock(smashState.getBlock()), 1, smashState.getBlock().getMetaFromState(state));
+                    if (hasOreName(smashStack, "oreIron")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.IRON_DUST, randomChanceReturn(9, 1, 2)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
                     }
-                }
-                if (hasOreName(smashStack, "oreCopper")) {
-                    if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                        world.setBlockToAir(pos.offset(face));
-                        PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.COPPER_DUST, randomChanceReturn(9, 1, 2)));
-                        tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                        return true;
+                    if (hasOreName(smashStack, "oreCopper")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.COPPER_DUST, randomChanceReturn(9, 1, 2)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
                     }
-                }
-                if (hasOreName(smashStack, "oreTin")) {
-                    if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                        world.setBlockToAir(pos.offset(face));
-                        PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.TIN_DUST, randomChanceReturn(9, 1, 2)));
-                        tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                        return true;
+                    if (hasOreName(smashStack, "oreTin")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.TIN_DUST, randomChanceReturn(9, 1, 2)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
                     }
-                }
-                if (hasOreName(smashStack, "oreZinc")) {
-                    if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                        world.setBlockToAir(pos.offset(face));
-                        PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.ZINC_DUST, randomChanceReturn(9, 1, 2)));
-                        tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                        return true;
+                    if (hasOreName(smashStack, "oreZinc")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.ZINC_DUST, randomChanceReturn(9, 1, 2)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
                     }
-                }
-                if (hasOreName(smashStack, "oreGold")) {
-                    if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                        world.setBlockToAir(pos.offset(face));
-                        PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.GOLD_DUST, randomChanceReturn(9, 1, 2)));
-                        tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                        return true;
+                    if (hasOreName(smashStack, "oreGold")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.GOLD_DUST, randomChanceReturn(9, 1, 2)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
                     }
                 }
             } else {

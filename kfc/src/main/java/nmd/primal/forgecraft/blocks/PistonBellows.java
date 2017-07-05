@@ -343,12 +343,6 @@ public class PistonBellows extends CustomContainerFacing {
     }
 
     @Override
-    public boolean isFullyOpaque(IBlockState state)
-    {
-        return false;
-    }
-
-    @Override
     public boolean isOpaqueCube(IBlockState state)
     {
         return false;

@@ -79,12 +79,6 @@ public class CrucibleHot extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public boolean isFullyOpaque(IBlockState state)
-    {
-        return false;
-    }
-
-    @Override
     public boolean isOpaqueCube(IBlockState state)
     {
         return false;

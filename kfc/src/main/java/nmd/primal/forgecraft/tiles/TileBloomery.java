@@ -102,7 +102,7 @@ public class TileBloomery extends TileBaseSlot implements ITickable {
 
     private void slotZeroManager(World world){
         if(this.getSlotStack(0) != ItemStack.EMPTY) {
-            Integer decrInt = (int) Math.floor(CommonUtils.getVanillaItemBurnTime(this.getSlotStack(0)) / 5);
+            Integer decrInt = (int) Math.floor(CommonUtils.getBurnTime(this.getSlotStack(0)) / 5);
             if(decrInt == 0) {
                 decrInt = 1;
             }
@@ -122,7 +122,7 @@ public class TileBloomery extends TileBaseSlot implements ITickable {
             }
             if (world.rand.nextInt(decrInt) == 0) {
                 if (world.rand.nextInt(burnModifier) == 0) {
-                    System.out.println("Fuel Burn" + this.getSlotStack(0));
+                    //System.out.println("Fuel Burn" + this.getSlotStack(0));
                     this.decrStackSize(0, 1);
                     this.markDirty();
                     this.updateBlock();
