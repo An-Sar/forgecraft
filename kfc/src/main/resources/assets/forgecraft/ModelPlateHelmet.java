@@ -11,7 +11,7 @@
 
 package net.minecraft.src;
 
-public class Modeltest extends ModelBase
+public class ModelPlateHelmet extends ModelBase
 {
   //fields
     ModelRenderer head;
@@ -215,12 +215,12 @@ public class Modeltest extends ModelBase
   {
     super.render(entity, f, f1, f2, f3, f4, f5);
     setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    head.render(f5);
-    body.render(f5);
-    rightarm.render(f5);
-    leftarm.render(f5);
-    rightleg.render(f5);
-    leftleg.render(f5);
+    //head.render(f5);
+    //body.render(f5);
+    //rightarm.render(f5);
+    //leftarm.render(f5);
+    //rightleg.render(f5);
+    //leftleg.render(f5);
     Shape1.render(f5);
     Shape1.render(f5);
     Shape1.render(f5);

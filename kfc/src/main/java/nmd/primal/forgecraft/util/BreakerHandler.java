@@ -11,9 +11,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import nmd.primal.core.api.PrimalItems;
 import nmd.primal.core.common.helper.PlayerHelper;
+import nmd.primal.core.common.helper.RecipeHelper;
 import nmd.primal.forgecraft.blocks.CustomContainerFacing;
 import nmd.primal.forgecraft.tiles.TileBreaker;
 
+import static nmd.primal.core.common.helper.CommonUtils.randomChanceReturn;
 import static nmd.primal.core.common.helper.CommonUtils.randomCheck;
 
 //import nmd.primal.forgecraft.CommonUtils;
@@ -23,7 +25,7 @@ import static nmd.primal.core.common.helper.CommonUtils.randomCheck;
  */
 public interface BreakerHandler {
 
-    default boolean hasOreName(ItemStack itemStack, String oreName)
+    /*default boolean hasOreName(ItemStack itemStack, String oreName)
     {
         int[] oreIds = OreDictionary.getOreIDs(itemStack);
         for(int oreId : oreIds)
@@ -35,7 +37,7 @@ public interface BreakerHandler {
             }
         }
         return false;
-    }
+    }*/
 
     default boolean doBreaking(World world, IBlockState state, BlockPos pos, TileBreaker tile) {
         for (int i=0; i < EnumFacing.HORIZONTALS.length; i++) {
@@ -45,7 +47,7 @@ public interface BreakerHandler {
                 IBlockState smashState = world.getBlockState(pos.offset(face));
                 if(!smashState.getBlock().equals(Blocks.AIR)) {
                     ItemStack smashStack = new ItemStack(Item.getItemFromBlock(smashState.getBlock()), 1, smashState.getBlock().getMetaFromState(smashState));
-                    if (hasOreName(smashStack, "oreIron")) {
+                    if (RecipeHelper.isOreName(smashStack, "oreIron")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
                             PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.IRON_DUST, randomChanceReturn(9, 1, 2)));
@@ -53,7 +55,7 @@ public interface BreakerHandler {
                             return true;
                         }
                     }
-                    if (hasOreName(smashStack, "oreCopper")) {
+                    if (RecipeHelper.isOreName(smashStack, "oreCopper")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
                             PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.COPPER_DUST, randomChanceReturn(9, 1, 2)));
@@ -61,7 +63,7 @@ public interface BreakerHandler {
                             return true;
                         }
                     }
-                    if (hasOreName(smashStack, "oreTin")) {
+                    if (RecipeHelper.isOreName(smashStack, "oreTin")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
                             PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.TIN_DUST, randomChanceReturn(9, 1, 2)));
@@ -69,7 +71,7 @@ public interface BreakerHandler {
                             return true;
                         }
                     }
-                    if (hasOreName(smashStack, "oreZinc")) {
+                    if (RecipeHelper.isOreName(smashStack, "oreZinc")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
                             PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.ZINC_DUST, randomChanceReturn(9, 1, 2)));
@@ -77,7 +79,7 @@ public interface BreakerHandler {
                             return true;
                         }
                     }
-                    if (hasOreName(smashStack, "oreGold")) {
+                    if (RecipeHelper.isOreName(smashStack, "oreGold")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
                             PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(PrimalItems.GOLD_DUST, randomChanceReturn(9, 1, 2)));
@@ -102,10 +104,4 @@ public interface BreakerHandler {
         }
         return threshold;
     }
-
-    public static int randomChanceReturn(int bound, int output1, int output2)
-    {
-        return randomCheck(bound) ? output2 : output1;
-    }
-
 }
