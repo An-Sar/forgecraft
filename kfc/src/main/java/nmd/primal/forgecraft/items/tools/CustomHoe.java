@@ -6,17 +6,21 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import nmd.primal.core.common.helper.PlayerHelper;
 import nmd.primal.forgecraft.ModInfo;
+import nmd.primal.forgecraft.init.ModItems;
 import nmd.primal.forgecraft.util.ToolNBT;
 
 import javax.annotation.Nullable;
@@ -28,14 +32,16 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class CustomHoe extends ItemHoe  implements ToolNBT {
 
-    public CustomHoe(String name, Item.ToolMaterial material) {
+    private Item drop;
+
+    public CustomHoe(String name, Item.ToolMaterial material, Item damageDrop) {
         super(material);
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(ModInfo.TAB_FORGECRAFT);
         this.setMaxStackSize(1);
         this.setNoRepair();
-
+        this.drop = damageDrop;
         this.addPropertyOverride(new ResourceLocation("type"), new IItemPropertyGetter() {
 
             /***
@@ -321,18 +327,78 @@ public class CustomHoe extends ItemHoe  implements ToolNBT {
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
+    protected void setBlock(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, IBlockState state)
     {
-        if (!worldIn.isRemote && (double)state.getBlockHardness(worldIn, pos) != 0.0D)
-        {
+        worldIn.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-            stack.getTagCompound().removeTag("ench");
-            //System.out.println(stack.getTagCompound());
-            if(getDiamondLevel(stack) > 0) {
-                if(ThreadLocalRandom.current().nextInt(0, getDiamondLevel(stack)) == 0) {
-                    stack.damageItem(1, entityLiving);
-                }
-            } else stack.damageItem(1, entityLiving);
+        if (!worldIn.isRemote)
+        {
+            worldIn.setBlockState(pos, state, 11);
+            if(stack.getMaxDamage() - stack.getItemDamage() >1 ) {
+                stack.damageItem(1, player);
+            } else {
+                ItemStack dropStack = new ItemStack(drop, 1);
+                dropStack.setItemDamage(stack.getItemDamage());
+                dropStack.setTagCompound(new NBTTagCompound());
+                NBTTagCompound copyNBT;
+                copyNBT = stack.getSubCompound("tags").copy();
+                dropStack.setTagCompound(copyNBT);
+                PlayerHelper.spawnItemOnPlayer(worldIn, player, dropStack);
+                player.renderBrokenItemStack(stack);
+                stack.shrink(1);
+            }
+        }
+    }
+
+    @Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
+    {
+        if(stack.getMaxDamage() - stack.getItemDamage() >1 ) {
+            stack.damageItem(1, attacker);
+            return true;
+        } else {
+            ItemStack dropStack = new ItemStack(drop, 1);
+            dropStack.setItemDamage(stack.getItemDamage());
+            dropStack.setTagCompound(new NBTTagCompound());
+            NBTTagCompound copyNBT;
+            copyNBT = stack.getSubCompound("tags").copy();
+            dropStack.setTagCompound(copyNBT);
+
+            EntityPlayer player = (EntityPlayer) attacker;
+            World world = attacker.getEntityWorld();
+            if(!world.isRemote) {
+                PlayerHelper.spawnItemOnPlayer(world, player, dropStack);
+                attacker.renderBrokenItemStack(stack);
+                stack.shrink(1);
+                return true;
+            }
+            return false;
+        }
+    }
+
+    @Override
+    public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
+    {
+        if (!world.isRemote && (double)state.getBlockHardness(world, pos) != 0.0D)
+        {
+            if(stack.getMaxDamage() - stack.getItemDamage() >1 ) {
+                stack.getTagCompound().removeTag("ench");
+                if(getDiamondLevel(stack) > 0) {
+                    if(ThreadLocalRandom.current().nextInt(0, getDiamondLevel(stack)) == 0) {
+                        stack.damageItem(1, entityLiving);
+                    }
+                } else stack.damageItem(1, entityLiving);
+            } else {
+                ItemStack dropStack = new ItemStack(drop, 1, stack.getItemDamage());
+                dropStack.setTagCompound(new NBTTagCompound());
+                NBTTagCompound copyNBT;
+                copyNBT = stack.getSubCompound("tags").copy();
+                dropStack.setTagCompound(copyNBT);
+                EntityPlayer player = (EntityPlayer) entityLiving;
+                PlayerHelper.spawnItemOnPlayer(world, player, dropStack);
+                entityLiving.renderBrokenItemStack(stack);
+                stack.shrink(1);
+            }
         }
 
         return true;

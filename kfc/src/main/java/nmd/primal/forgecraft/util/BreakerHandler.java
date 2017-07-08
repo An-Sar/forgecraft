@@ -44,7 +44,7 @@ public interface BreakerHandler {
                 //Block smashBlock = world.getBlockState(pos.offset(face)).getBlock();
                 IBlockState smashState = world.getBlockState(pos.offset(face));
                 if(!smashState.getBlock().equals(Blocks.AIR)) {
-                    ItemStack smashStack = new ItemStack(Item.getItemFromBlock(smashState.getBlock()), 1, smashState.getBlock().getMetaFromState(state));
+                    ItemStack smashStack = new ItemStack(Item.getItemFromBlock(smashState.getBlock()), 1, smashState.getBlock().getMetaFromState(smashState));
                     if (hasOreName(smashStack, "oreIron")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
