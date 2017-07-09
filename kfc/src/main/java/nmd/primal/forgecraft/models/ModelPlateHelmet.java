@@ -13,27 +13,27 @@ public class ModelPlateHelmet extends ModelBiped
     ModelRenderer leftarm;
     ModelRenderer rightleg;
     ModelRenderer leftleg;
-    ModelRenderer Shape1;
-    ModelRenderer Shape2;
-    ModelRenderer Shape3;
-    ModelRenderer Shape4;
-    ModelRenderer Shape5;
-    //ModelRenderer Shape6;
-    ModelRenderer Shape7;
-    ModelRenderer Shape8;
-    ModelRenderer Shape9;
-    ModelRenderer Shape10;
-    ModelRenderer Shape11;
-    ModelRenderer Shape12;
-    ModelRenderer Shape13;
-    ModelRenderer Shape14;
-    ModelRenderer Shape15;
-    ModelRenderer Shape16;
-    ModelRenderer Shape17;
-    ModelRenderer Shape18;
-    ModelRenderer Shape19;
-    ModelRenderer Shape20;
-    ModelRenderer Shape21;
+    private ModelRenderer Shape1;
+    private ModelRenderer Shape2;
+    private ModelRenderer Shape3;
+    private ModelRenderer Shape4;
+    private ModelRenderer Shape5;
+    private ModelRenderer Shape6;
+    private ModelRenderer Shape7;
+    private ModelRenderer Shape8;
+    private ModelRenderer Shape9;
+    private ModelRenderer Shape10;
+    private ModelRenderer Shape11;
+    private ModelRenderer Shape12;
+    private ModelRenderer Shape13;
+    private ModelRenderer Shape14;
+    private ModelRenderer Shape15;
+    private ModelRenderer Shape16;
+    private ModelRenderer Shape17;
+    private ModelRenderer Shape18;
+    private ModelRenderer Shape19;
+    private ModelRenderer Shape20;
+    private ModelRenderer Shape21;
   
   public ModelPlateHelmet(float scale)
   {
@@ -201,18 +201,23 @@ public class ModelPlateHelmet extends ModelBiped
     Shape21.setTextureSize(64, 64);
     Shape21.mirror = true;
     setRotation(Shape21, 0F, 0F, 0F);
+    Shape6 = new ModelRenderer(this, 5, 37);
+    Shape6.addBox(0.5F, -7F, -5F, 4, 7, 1);
+    Shape6.setRotationPoint(0F, 0F, 0F);
+    Shape6.setTextureSize(64, 64);
+    Shape6.mirror = true;
+    setRotation(Shape6, 0F, 3.141593F, 0F);
 
     this.bipedHead.addChild(Shape1);
     this.bipedHead.addChild(Shape2);
     this.bipedHead.addChild(Shape3);
     this.bipedHead.addChild(Shape4);
     this.bipedHead.addChild(Shape5);
-    //this.bipedHead.addChild(Shape6);
     this.bipedHead.addChild(Shape7);
     this.bipedHead.addChild(Shape8);
     this.bipedHead.addChild(Shape9);
     this.bipedHead.addChild(Shape10);
-    this.bipedHead.addChild(Shape10);
+    this.bipedHead.addChild(Shape11);
     this.bipedHead.addChild(Shape12);
     this.bipedHead.addChild(Shape13);
     this.bipedHead.addChild(Shape14);
@@ -223,6 +228,7 @@ public class ModelPlateHelmet extends ModelBiped
     this.bipedHead.addChild(Shape19);
     this.bipedHead.addChild(Shape20);
     this.bipedHead.addChild(Shape21);
+    this.bipedHead.addChild(Shape6);
 
   }
   
@@ -256,6 +262,7 @@ public class ModelPlateHelmet extends ModelBiped
     Shape19.render(f5);
     Shape20.render(f5);
     Shape21.render(f5);
+    Shape6.render(f5);
   }
 
   private void setRotation(ModelRenderer model, float x, float y, float z)
