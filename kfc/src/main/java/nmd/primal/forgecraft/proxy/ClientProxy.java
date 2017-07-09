@@ -1,16 +1,23 @@
 package nmd.primal.forgecraft.proxy;
 
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import nmd.primal.forgecraft.init.ModBlocks;
 import nmd.primal.forgecraft.init.ModItems;
+import nmd.primal.forgecraft.models.ModelPlateHelmet;
 import nmd.primal.forgecraft.renders.blocks.*;
 import nmd.primal.forgecraft.tiles.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by kitsu on 11/26/2016.
  */
 public class ClientProxy implements CommonProxy {
+
+    public static final Map<Item, ModelBiped> armorModels = new HashMap<Item, ModelBiped>();
 
     @Override
     public void preInit(){
@@ -25,6 +32,7 @@ public class ClientProxy implements CommonProxy {
         ModBlocks.registerRenders();
         //this.registerModelBakeryStuff();
         this.registerTileRendering();
+        this.registerModels();
     }
 
     //@Override
@@ -37,6 +45,13 @@ public class ClientProxy implements CommonProxy {
         ClientRegistry.bindTileEntitySpecialRenderer(TileBreaker.class, new TileBreakerRender());
         ClientRegistry.bindTileEntitySpecialRenderer(TileCastingForm.class, new TileCastingformRender());
         ClientRegistry.bindTileEntitySpecialRenderer(TileCastingBlock.class, new TileCastingBlockRender());
+    }
+
+    public void registerModels(){
+
+        ModelPlateHelmet custom_armor = new ModelPlateHelmet(1.0f);
+
+        armorModels.put(ModItems.testleggings, custom_armor);
     }
 
     @Override
