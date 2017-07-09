@@ -260,7 +260,7 @@ public class ModItems {
         /**********
          ARMOR
          **********/
-        testleggings=new CustomLeggings(PrimalMaterials.ARMOR_HIDE, 3, EntityEquipmentSlot.HEAD, "testleggings");
+        testleggings=new CustomLeggings(PrimalMaterials.ARMOR_HIDE, 0, EntityEquipmentSlot.HEAD, "testleggings");
         //registerItem(312, "diamond_leggings", (new ItemArmor(ItemArmor.ArmorMaterial.DIAMOND, 3, EntityEquipmentSlot.LEGS)).setUnlocalizedName("leggingsDiamond"));
     }
 
