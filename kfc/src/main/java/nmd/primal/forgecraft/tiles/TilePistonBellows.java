@@ -5,6 +5,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
 import nmd.primal.core.api.PrimalAPI;
+import nmd.primal.forgecraft.blocks.PistonBellows;
 
 
 /**
@@ -20,7 +21,7 @@ public class TilePistonBellows extends BaseTile implements ITickable{
         if (!world.isRemote) {
             World world = this.getWorld();
             IBlockState state = world.getBlockState(this.pos);
-            if (world.getBlockState(this.getPos()).getValue(PrimalAPI.States.ACTIVE)) {
+            if (state.getBlock() instanceof PistonBellows && state.getValue(PrimalAPI.States.ACTIVE)) {
                 iteration++;
                 if(iteration <= 15){
                     animateIteration++;
