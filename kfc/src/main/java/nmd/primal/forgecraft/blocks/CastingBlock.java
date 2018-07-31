@@ -20,6 +20,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import nmd.primal.core.api.PrimalAPI;
 import nmd.primal.core.common.helper.CommonUtils;
 import nmd.primal.core.common.helper.PlayerHelper;
 import nmd.primal.forgecraft.ModInfo;
@@ -107,7 +108,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         //makeEmbers(world, pos, world.rand);
@@ -118,7 +119,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -128,7 +129,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -138,7 +139,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -148,7 +149,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -180,7 +181,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -202,7 +203,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -224,7 +225,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -246,7 +247,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -256,7 +257,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -279,7 +280,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if (CommonUtils.randomCheck(2)) {
+                        if (PrimalAPI.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -300,7 +301,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if (CommonUtils.randomCheck(2)) {
+                        if (PrimalAPI.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -323,7 +324,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if (CommonUtils.randomCheck(2)) {
+                        if (PrimalAPI.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -346,7 +347,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if (CommonUtils.randomCheck(2)) {
+                        if (PrimalAPI.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -356,7 +357,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if (CommonUtils.randomCheck(2)) {
+                        if (PrimalAPI.randomCheck(2)) {
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -379,7 +380,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -400,7 +401,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -423,7 +424,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -446,7 +447,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -456,7 +457,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -479,7 +480,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -500,7 +501,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -523,7 +524,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -546,7 +547,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;
@@ -556,7 +557,7 @@ public class CastingBlock extends CustomContainerFacing {
                         PlayerHelper.spawnItemOnGround(world, pos, dropStack);
                         PlayerHelper.spawnItemOnGround(world, pos, dropCrucible);
                         pItem.getTagCompound().setInteger("type", 0);
-                        if(CommonUtils.randomCheck(2)){
+                        if(PrimalAPI.randomCheck(2)){
                             tile.setSlotStack(0, ItemStack.EMPTY);
                         }
                         return true;

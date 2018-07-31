@@ -42,13 +42,13 @@ public class TileBloomery extends TileBaseSlot implements ITickable {
                 this.iteration++;
                 if (this.iteration == 100) {
                     RecipeHelper.fuelManager(world,this, this.getSlotStack(0));
-                    if(CommonUtils.randomCheck(1000)) {
+                    if(PrimalAPI.randomCheck(1000)) {
                         makeSmoke(world, pos);
                     }
                 }
                 if (this.iteration == 200) {
                     RecipeHelper.fuelManager(world, this, this.getSlotStack(0));
-                    if(CommonUtils.randomCheck(1000)) {
+                    if(PrimalAPI.randomCheck(1000)) {
                         makeSmoke(world, pos);
                     }
                 }
@@ -63,7 +63,7 @@ public class TileBloomery extends TileBaseSlot implements ITickable {
                         }
                     this.heatManager(this.getHeat(), state, this.getSlotStack(0), world, pos);
                     RecipeHelper.fuelManager(world, this, this.getSlotStack(0));
-                    if(CommonUtils.randomCheck(1000)) {
+                    if(PrimalAPI.randomCheck(1000)) {
                         makeSmoke(world, pos);
                     }
                 }
@@ -152,7 +152,7 @@ public class TileBloomery extends TileBaseSlot implements ITickable {
                 this.markDirty();
                 this.updateBlock();
             }
-            if(CommonUtils.randomCheck(1000)) {
+            if(PrimalAPI.randomCheck(1000)) {
                 makeSmoke(world, pos);
             }
         }
