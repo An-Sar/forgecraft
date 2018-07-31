@@ -13,7 +13,7 @@ import nmd.primal.core.common.helper.RecipeHelper;
 import nmd.primal.forgecraft.blocks.CustomContainerFacing;
 import nmd.primal.forgecraft.tiles.TileBreaker;
 
-import static nmd.primal.core.common.helper.CommonUtils.randomChanceReturn;
+import static nmd.primal.core.api.PrimalAPI.randomChanceReturn;
 
 //import nmd.primal.forgecraft.CommonUtils;
 
