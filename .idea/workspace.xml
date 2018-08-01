@@ -3,25 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2374d888-04b5-4300-967c-f257dee6cdd6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/CommonUtils.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/CommonUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/ForgeCraft.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/ForgeCraft.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/ModInfo.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/ModInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/Firebox.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/Firebox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/PistonBellows.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/PistonBellows.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/compat/FuelHandler.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/compat/FuelHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModCrafting.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModCrafting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModItems.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModRegistries.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModRegistries.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModTiles.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/init/ModTiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/items/BaseItem.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/items/BaseItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/items/ItemTest.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/items/ItemTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/proxy/ClientProxy.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/proxy/ClientProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/renders/TileFireboxRender.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/renders/TileFireboxRender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/renders/TilePistonBellowsRender.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/renders/TilePistonBellowsRender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/BaseTile.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/BaseTile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/TileBaseSlot.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/TileBaseSlot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/TileFirebox.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/TileFirebox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/TilePistonBellows.java" afterPath="$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/tiles/TilePistonBellows.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,28 +19,7 @@
     <favorites_list name="ForgeCraft" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PistonBellows.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/PistonBellows.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Firebox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/Firebox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret line="42" column="77" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,8 +37,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="y" value="22" />
+    <option name="width" value="2560" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -107,152 +68,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1.11" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1.11" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1.11" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nmd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="primal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forgecraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1.11" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nmd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="primal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forgecraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForgeCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1.11" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -357,8 +183,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="2560" height="1028" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -374,7 +200,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25178713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -397,28 +223,8 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/Firebox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="42" column="77" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/PistonBellows.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/CommonUtils.java" />
+    <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/Firebox.java" />
+    <entry file="file://$PROJECT_DIR$/1.11/src/main/java/nmd/primal/forgecraft/blocks/PistonBellows.java" />
   </component>
 </project>
