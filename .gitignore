@@ -39,6 +39,7 @@ out
 *.iws
 *.iml
 .idea
+.idea/workspace.xml
 
 # gradle
 build
