@@ -18,9 +18,9 @@ public class ModInfo {
     //public static final String MOD_PREFIX = MOD_ID + ":";
     public static final String MOD_CHANNEL = MOD_ID;
 
-    public static final String MOD_VERSION = "1.4.10";
+    public static final String MOD_VERSION = "1.4.11";
     public static final String MC_VERSIONS = "[1.12.0, 1.13.0)";
-    public static final String DEPENDENCIES = "required-after:forge@[14.21.1.2400,);" + "required-after:primal@[0.6,);";
+    public static final String DEPENDENCIES = "required-after:forge@[14.21.1.2400,);" + "required-after:primal@[0.6.69,);";
 
     /** Mod Structures **/
     public static final String SERVER_PROXY = "nmd.primal.forgecraft.proxy.ServerProxy";
