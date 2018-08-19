@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 import nmd.primal.core.api.PrimalAPI;
 import nmd.primal.core.common.helper.PlayerHelper;
 import nmd.primal.core.common.helper.RecipeHelper;
+import nmd.primal.core.common.recipes.inworld.GallagherRecipe;
 import nmd.primal.forgecraft.blocks.CustomContainerFacing;
 import nmd.primal.forgecraft.tiles.TileBreaker;
 
@@ -44,6 +45,18 @@ public interface BreakerHandler {
                 IBlockState smashState = world.getBlockState(pos.offset(face));
                 if(!smashState.getBlock().equals(Blocks.AIR)) {
                     ItemStack smashStack = new ItemStack(Item.getItemFromBlock(smashState.getBlock()), 1, smashState.getBlock().getMetaFromState(smashState));
+
+                    for (GallagherRecipe recipe : GallagherRecipe.RECIPES) {
+                        if (recipe.match(smashState)) {
+                            if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                                world.setBlockToAir(pos.offset(face));
+                                PlayerHelper.spawnItemOnGround(world, pos.offset(face), recipe.getOutputStack());
+                                tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                                return true;
+                            }
+                        }
+                    }
+
                     if (RecipeHelper.isOreName(smashStack, "oreIron")) {
                         if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
                             world.setBlockToAir(pos.offset(face));
