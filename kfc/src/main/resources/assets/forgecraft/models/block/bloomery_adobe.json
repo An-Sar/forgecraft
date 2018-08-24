@@ -3,7 +3,7 @@
 	"textures": {
 		"particle": "blocks/stone_slab",
 		"texture": "blocks/stone_slab",
-		"texture1": "primal:items/adobebrick_dry",
+		"texture1": "primal:items/bricks/adobebrick_dry",
 		"texture2": "primal:blocks/adobebrick_mortar"
 	},
 	"elements": [

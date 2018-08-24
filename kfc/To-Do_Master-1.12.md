@@ -2,6 +2,9 @@ To-Dos
 
 *** Bugs ***
 
+- [x] Adobe Textures lost
+- [x] Casting Mud lost texture
+- [x] lang file missing entries
 
 *** Current Feature ***
 - [x] BlockBreaker Support for copper dust and tin dust
