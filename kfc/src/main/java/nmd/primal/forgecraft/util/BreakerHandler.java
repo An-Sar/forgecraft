@@ -46,6 +46,23 @@ public interface BreakerHandler {
                 if(!smashState.getBlock().equals(Blocks.AIR)) {
                     ItemStack smashStack = new ItemStack(Item.getItemFromBlock(smashState.getBlock()), 1, smashState.getBlock().getMetaFromState(smashState));
 
+                    if (RecipeHelper.isOreName(smashStack, "cobblestone")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(Blocks.GRAVEL, randomChanceReturn(9, 1, 1)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
+                    }
+                    if (RecipeHelper.isOreName(smashStack, "gravel")) {
+                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
+                            world.setBlockToAir(pos.offset(face));
+                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(Blocks.SAND, randomChanceReturn(9, 1, 1)));
+                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
+                            return true;
+                        }
+                    }
+
                     for (GallagherRecipe recipe : GallagherRecipe.RECIPES) {
                         if (recipe.match(smashState)) {
                             if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
@@ -97,22 +114,7 @@ public interface BreakerHandler {
                             return true;
                         }
                     }
-                    if (RecipeHelper.isOreName(smashStack, "cobblestone")) {
-                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                            world.setBlockToAir(pos.offset(face));
-                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(Blocks.GRAVEL, randomChanceReturn(9, 1, 1)));
-                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                            return true;
-                        }
-                    }
-                    if (RecipeHelper.isOreName(smashStack, "gravel")) {
-                        if (tile.getCharge() > getThreshold(world, pos.offset(face))) {
-                            world.setBlockToAir(pos.offset(face));
-                            PlayerHelper.spawnItemOnGround(world, pos.offset(face), new ItemStack(Blocks.SAND, randomChanceReturn(9, 1, 1)));
-                            tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 1);
-                            return true;
-                        }
-                    }
+
                 }
             } else {
                 tile.getSlotStack(0).setItemDamage(tile.getSlotStack(0).getItemDamage() + 10);
